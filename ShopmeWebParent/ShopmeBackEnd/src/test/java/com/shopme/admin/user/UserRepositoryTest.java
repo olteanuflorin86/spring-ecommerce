@@ -1,12 +1,11 @@
 package com.shopme.admin.user;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat; 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -75,6 +74,7 @@ public class UserRepositoryTest {
 		System.out.println(user);
 		assertThat(user).isNotNull();
 	}
+	
 	@Disabled
 	@Test
 	void testUpdateUserDetails() {
@@ -100,7 +100,7 @@ public class UserRepositoryTest {
 		assertThat(user.getRoles().size()).isGreaterThan(1);
 	}
 	
-//	@Disabled
+	@Disabled
 	@Test
 	void testDeleteUser() {
 		userRepository.deleteById(2);
