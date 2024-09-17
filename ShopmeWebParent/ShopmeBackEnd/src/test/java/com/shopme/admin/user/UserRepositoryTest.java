@@ -107,5 +107,14 @@ public class UserRepositoryTest {
 		User deletedUser = userRepository.findById(2).get();
 		assertNull(deletedUser);
 	}
+	
+	@Test
+	public void testGetUserByEmail() {
+//		String email = "newUser2@gmail.com";
+		String email = "newUser@gmail.com";
+		User user = userRepository.getUserByEmail(email);
+		System.out.println(user);
+		assertThat(user).isNotNull();
+	}
 
 }
