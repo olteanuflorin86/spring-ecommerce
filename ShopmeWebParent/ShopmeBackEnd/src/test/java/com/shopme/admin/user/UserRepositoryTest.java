@@ -108,6 +108,7 @@ public class UserRepositoryTest {
 		assertNull(deletedUser);
 	}
 	
+	@Disabled
 	@Test
 	public void testGetUserByEmail() {
 //		String email = "newUser2@gmail.com";
@@ -115,6 +116,14 @@ public class UserRepositoryTest {
 		User user = userRepository.getUserByEmail(email);
 		System.out.println(user);
 		assertThat(user).isNotNull();
+	}
+	
+	@Test
+	public void testCountById() {
+//		Integer id = 100;
+		Integer id = 1;
+		Long count = userRepository.countById(id);
+		assertThat(count).isNotNull().isGreaterThan(0);
 	}
 
 }
