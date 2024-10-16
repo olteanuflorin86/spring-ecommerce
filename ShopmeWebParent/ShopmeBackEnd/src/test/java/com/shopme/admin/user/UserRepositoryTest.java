@@ -118,12 +118,28 @@ public class UserRepositoryTest {
 		assertThat(user).isNotNull();
 	}
 	
+	@Disabled
 	@Test
 	public void testCountById() {
 //		Integer id = 100;
 		Integer id = 1;
 		Long count = userRepository.countById(id);
 		assertThat(count).isNotNull().isGreaterThan(0);
+	}
+	
+	@Disabled
+	@Test
+	public void testDisableUser() {
+		Integer id = 1;
+		userRepository.updateEnabledStatus(id, false);
+		assertThat(userRepository.findById(id).get().isEnabled()).isFalse();
+	}
+	
+	@Test
+	public void testEnableUser() {
+		Integer id = 1;
+		userRepository.updateEnabledStatus(id, true);
+		assertThat(userRepository.findById(id).get().isEnabled()).isTrue();
 	}
 
 }
